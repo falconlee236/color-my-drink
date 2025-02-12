@@ -1,75 +1,78 @@
 @import "tailwindcss";
+/* @import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/scrollbar'; */
 
-:root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
 
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
-
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "pretendard";
+  src: url("./font/pretendard/stylesheet.css");
 }
 
-a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
+@layer base {
+  body {
+    font-family: "pretendard";
+    color: #333;
+    background-color: #212121;
+    max-width: 430px;
+    margin: 0 auto;
+  }
+
+  .wrap {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .inner {
+    width: calc(100% - 60px);
+    /* height: 100%; */
+    margin: 0 auto;
+  }
+
 }
 
-a:hover {
-    color: #535bf2;
-}
-
-body {
-    margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
-}
-
-h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
-}
-
-button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: border-color 0.25s;
-}
-
-button:hover {
-    border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-
-    a:hover {
-        color: #747bff;
-    }
-
-    button {
-        background-color: #f9f9f9;
-    }
+@theme {
+  --radius-10: 10px;
+  --radius-20: 20px;
+  --radius-40: 40px;
+  --color-green: #2e4a3d;
+  --color-green20: rgba(46, 74, 61, 0.2);
+  --color-button: #212121;
+  --color-bg: #e0decf;
+  --color-fff60 : rgba(255, 255, 255, 0.6);
+  --color-ccc25 : rgba(204, 204, 204, 0.25);
+  --color-ccc80 : rgba(204, 204, 204, 0.8);
+  --color-33380 : rgba(51, 51, 51, 0.8);
+  --color-btn80 : rgba(33, 33, 33, 0.8);
+  --color-ddd : #ddd;
+  --color-ccc : #ccc;
+  --color-888: #888;
+  --color-333: #333;
+  --color-555: #555;
+  --spacing-10: 10px;
+  --spacing-15: 15px;
+  --spacing-18: 18px;
+  --spacing-20: 20px;
+  --spacing-25: 25px;
+  --spacing-30: 30px;
+  --spacing-40: 40px;
+  --spacing-50: 50px;
+  --spacing-55: 55px;
+  --spacing-60: 60px;
+  --spacing-70: 70px;
+  --spacing-80: 80px;
+  --spacing-100: 100px;
+  --spacing-120: 120px;
+  --spacing-150: 150px;
+  --spacing-170: 170px;
+  --spacing-200: 200px;
+  --spacing-250: 250px;
+  --spacing-300: 300px;
+  --spacing-600: 600px;
+  --spacing-inner: calc(100% - 30px);
 }

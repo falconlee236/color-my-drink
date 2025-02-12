@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'pretendard';
+    src: url('font/pretnedard/Pretendard-Bold.eot');
+    src: url('font/pretnedard/Pretendard-Bold.eot?#iefix') format('embedded-opentype'),
+        url('font/pretnedard/Pretendard-Bold.woff2') format('woff2'),
+        url('font/pretnedard/Pretendard-Bold.woff') format('woff'),
+        url('font/pretnedard/Pretendard-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('font/pretnedard/Pretendard-Black.eot');
+    src: url('font/pretnedard/Pretendard-Black.eot?#iefix') format('embedded-opentype'),
+        url('font/pretnedard/Pretendard-Black.woff2') format('woff2'),
+        url('font/pretnedard/Pretendard-Black.woff') format('woff'),
+        url('font/pretnedard/Pretendard-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('font/pretnedard/Pretendard-ExtraBold.eot');
+    src: url('font/pretnedard/Pretendard-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('font/pretnedard/Pretendard-ExtraBold.woff2') format('woff2'),
+        url('font/pretnedard/Pretendard-ExtraBold.woff') format('woff'),
+        url('font/pretnedard/Pretendard-ExtraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('font/pretnedard/Pretendard-ExtraLight.eot');
+    src: url('font/pretnedard/Pretendard-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('font/pretnedard/Pretendard-ExtraLight.woff2') format('woff2'),
+        url('font/pretnedard/Pretendard-ExtraLight.woff') format('woff'),
+        url('font/pretnedard/Pretendard-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('font/pretnedard/Pretendard-Medium.eot');
+    src: url('font/pretnedard/Pretendard-Medium.eot?#iefix') format('embedded-opentype'),
+        url('font/pretnedard/Pretendard-Medium.woff2') format('woff2'),
+        url('font/pretnedard/Pretendard-Medium.woff') format('woff'),
+        url('font/pretnedard/Pretendard-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('font/pretnedard/Pretendard-SemiBold.eot');
+    src: url('font/pretnedard/Pretendard-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('font/pretnedard/Pretendard-SemiBold.woff2') format('woff2'),
+        url('font/pretnedard/Pretendard-SemiBold.woff') format('woff'),
+        url('font/pretnedard/Pretendard-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('font/pretnedard/Pretendard-Thin.eot');
+    src: url('font/pretnedard/Pretendard-Thin.eot?#iefix') format('embedded-opentype'),
+        url('font/pretnedard/Pretendard-Thin.woff2') format('woff2'),
+        url('font/pretnedard/Pretendard-Thin.woff') format('woff'),
+        url('font/pretnedard/Pretendard-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('font/pretnedard/Pretendard-Regular.eot');
+    src: url('font/pretnedard/Pretendard-Regular.eot?#iefix') format('embedded-opentype'),
+        url('font/pretnedard/Pretendard-Regular.woff2') format('woff2'),
+        url('font/pretnedard/Pretendard-Regular.woff') format('woff'),
+        url('font/pretnedard/Pretendard-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('font/pretnedard/Pretendard-Light.eot');
+    src: url('font/pretnedard/Pretendard-Light.eot?#iefix') format('embedded-opentype'),
+        url('font/pretnedard/Pretendard-Light.woff2') format('woff2'),
+        url('font/pretnedard/Pretendard-Light.woff') format('woff'),
+        url('font/pretnedard/Pretendard-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
