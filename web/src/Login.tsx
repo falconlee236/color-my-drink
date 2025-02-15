@@ -5,8 +5,8 @@ function Login() {
     <div className="wrap bg-[url(./img/bg_login.jpg)] bg-center">
       <div className="inner h-full flex flex-col justify-center gap-[42%]">
         <div className="flex flex-col justify-center gap-10 text-center">
-          <h1 className="text-[55px] font-semibold">선물 한 잔</h1>
-          <h2 className="text-[20px] font-semibold">A Cup of Present</h2>
+          <h1 className="text-55 font-semibold">선물 한 잔</h1>
+          <h2 className="text-20 font-semibold">A Cup of Present</h2>
         </div>
         <div className="flex flex-col gap-[15px]">
           <div className="flex flex-col gap-[12px]">

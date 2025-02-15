@@ -37,23 +37,35 @@
 }
 
 @theme {
+  /* font-size */
+  --text-55 : 3.438rem;
+  --text-20 : 1.25rem;
+
+  /* raidus */
   --radius-10: 10px;
   --radius-20: 20px;
   --radius-40: 40px;
+
+  /* color */
+  --color-kakao: #F4E04A;
+  --color-google: #fefefe;
+  --color-naver: #2eb401;
+  --color-bg: #e0decf;
   --color-green: #2e4a3d;
   --color-green20: rgba(46, 74, 61, 0.2);
   --color-button: #212121;
-  --color-bg: #e0decf;
-  --color-fff60 : rgba(255, 255, 255, 0.6);
+  --color-btn80 : rgba(33, 33, 33, 0.8);
+  --color-333: #333333;
+  --color-33380 : rgba(51, 51, 51, 0.8);
+  --color-555: #555555;
+  --color-888: #888888;
+  --color-ccc : #cccccc;
   --color-ccc25 : rgba(204, 204, 204, 0.25);
   --color-ccc80 : rgba(204, 204, 204, 0.8);
-  --color-33380 : rgba(51, 51, 51, 0.8);
-  --color-btn80 : rgba(33, 33, 33, 0.8);
-  --color-ddd : #ddd;
-  --color-ccc : #ccc;
-  --color-888: #888;
-  --color-333: #333;
-  --color-555: #555;
+  --color-ddd : #dddddd;
+  --color-fff60 : rgba(255, 255, 255, 0.6);
+
+  /* spacing */  
   --spacing-10: 10px;
   --spacing-15: 15px;
   --spacing-18: 18px;
