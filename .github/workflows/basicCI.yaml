@@ -1,0 +1,54 @@
+name: Basic CI
+run-name: Basic CI [${{ github.ref_name }}] [${{ github.actor }}] [${{ github.event.head_commit.timestamp }}]
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+
+jobs:
+  web-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pulling code from github branch
+        uses: actions/checkout@v4
+      
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+      
+      - name: install dependencies
+        run: npm ci
+      
+      - name: web Lint test
+        run: npm run lint
+      
+      - name: web build test
+        run: npm run build --if-present
+      
+  server-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pulling code from github branch
+        uses: actions/checkout@v4
+      
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'oracle'
+      
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Spring Package
+          path: build/libs
+
+          
