@@ -21,9 +21,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22.x'
-      
-      - name: install require modules
-        run: npm install @rollup/rollup-linux-x64-gnu --save-optional
 
       - name: install dependencies
         run: npm ci
