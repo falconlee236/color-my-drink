@@ -10,6 +10,9 @@ on:
 jobs:
   web-test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
     steps:
       - name: pulling code from github branch
         uses: actions/checkout@v4
@@ -30,6 +33,9 @@ jobs:
       
   server-test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
     steps:
       - name: pulling code from github branch
         uses: actions/checkout@v4
