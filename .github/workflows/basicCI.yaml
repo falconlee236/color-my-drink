@@ -1,5 +1,5 @@
 name: Basic CI
-run-name: Basic CI [${{ github.ref_name }}] [${{ github.actor }}] [${{ github.event.head_commit.timestamp }}]
+run-name: Basic CI [${{ github.ref_name }}] [${{ github.actor }}]
 
 on:
   push:
@@ -22,6 +22,9 @@ jobs:
         with:
           node-version: '22.x'
       
+      - name: install require modules
+        run: npm install @rollup/rollup-linux-x64-gnu --save-optional
+
       - name: install dependencies
         run: npm ci
       
