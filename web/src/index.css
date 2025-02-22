@@ -1,0 +1,93 @@
+/* font */
+@import url("./font/pretendard/stylesheet.css");
+
+@import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/scrollbar";
+
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+
+@layer base {
+  body {
+    font-family: "pretendard";
+    line-height: 1;
+    color: #333;
+    background-color: #212121;
+    max-width: 430px;
+    margin: 0 auto;
+  }
+
+  .wrap {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .inner {
+    width: calc(100% - 60px);
+    /* height: 100%; */
+    margin: 0 auto;
+  }
+}
+
+@theme {
+  /* font-size */
+  --text-55: 3.438rem;
+  --text-30: 1.875rem;
+  --text-27: 1.688rem;
+  --text-20: 1.25rem;
+  --text-18: 1.125rem;
+
+  /* raidus */
+  --radius-10: 10px;
+  --radius-20: 20px;
+  --radius-40: 40px;
+
+  /* color */
+  --color-kakao: #f4e04a;
+  --color-google: #fefefe;
+  --color-naver: #2eb401;
+  --color-bg: #e0decf;
+  --color-green: #2e4a3d;
+  --color-green20: rgba(46, 74, 61, 0.2);
+  --color-button: #212121;
+  --color-btn80: rgba(33, 33, 33, 0.8);
+  --color-333: #333333;
+  --color-33380: rgba(51, 51, 51, 0.8);
+  --color-555: #555555;
+  --color-888: #888888;
+  --color-ccc: #cccccc;
+  --color-ccc25: rgba(204, 204, 204, 0.25);
+  --color-ccc80: rgba(204, 204, 204, 0.8);
+  --color-ddd: #dddddd;
+  --color-fff60: rgba(255, 255, 255, 0.6);
+
+  /* spacing */
+  --spacing-10: 10px;
+  --spacing-12: 12px;
+  --spacing-15: 15px;
+  --spacing-18: 18px;
+  --spacing-20: 20px;
+  --spacing-25: 25px;
+  --spacing-30: 30px;
+  --spacing-40: 40px;
+  --spacing-50: 50px;
+  --spacing-55: 55px;
+  --spacing-60: 60px;
+  --spacing-70: 70px;
+  --spacing-80: 80px;
+  --spacing-100: 100px;
+  --spacing-120: 120px;
+  --spacing-150: 150px;
+  --spacing-170: 170px;
+  --spacing-200: 200px;
+  --spacing-250: 250px;
+  --spacing-300: 300px;
+  --spacing-600: 600px;
+  --spacing-inner: calc(100% - 30px);
+}
