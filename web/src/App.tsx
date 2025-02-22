@@ -3,7 +3,6 @@ import Login from "./Login.tsx";
 import Mainpage from "./Mainpage.tsx";
 import MainpageF from "./MainpageF.tsx";
 
-
 function App() {
   return (
     <BrowserRouter>

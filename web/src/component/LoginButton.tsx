@@ -2,7 +2,7 @@ import { useNavigate } from "react-router";
 
 interface LoginButtonProps {
   name: "kakao" | "google" | "naver";
-  children : React.ReactNode;
+  children: React.ReactNode;
 }
 
 function LoginButton({ name, children }: LoginButtonProps) {
@@ -27,7 +27,7 @@ function LoginButton({ name, children }: LoginButtonProps) {
   return (
     <button
       type="button"
-      className={`${name} h-[55px] w-[100%] text-base font-medium ${colors[name]} ${name === "naver" ? `text-[#fff]` : `text-[#333]`} rounded-10 relative shadow-[2px_2px_4px_0px_rgba(0,0,0,0.15)]`}
+      className={`${name} h-[55px] w-[100%] text-base font-medium ${colors[name]} ${name === "naver" ? `text-[#fff]` : `text-[#333]`} relative rounded-10 shadow-[2px_2px_4px_0px_rgba(0,0,0,0.15)]`}
       onClick={clickLogin}
     >
       <div
