@@ -1,5 +1,5 @@
 /* font */
-@import url("./font/pretendard/stylesheet.css");
+@import url("./assets/font/font.css");
 
 @import "tailwindcss";
 @import "swiper/css";

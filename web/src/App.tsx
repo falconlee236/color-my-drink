@@ -1,18 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router";
-import Login from "./Login.tsx";
-import Mainpage from "./Mainpage.tsx";
-import MainpageF from "./MainpageF.tsx";
+import Login from "./pages/Login.tsx";
+import Mainpage from "./pages/Mainpage.tsx";
+import Sharedpage from "./pages/Sharedpage.tsx";
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/Mainpage" element={<Mainpage />} />
-        <Route path="/MainpageF" element={<MainpageF />} />
+        <Route path="/mainpage" element={<Mainpage />} />
+        <Route path="/sharedpage" element={<Sharedpage />} />
       </Routes>
     </BrowserRouter>
   );
 }
-
-export default App;
