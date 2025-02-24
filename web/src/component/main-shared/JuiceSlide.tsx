@@ -8,10 +8,7 @@ interface JuiceSlideProps {
 
 export default function JuiceSlide(props: JuiceSlideProps) {
   const slideNum = Math.floor(props.totalJuice / 14) + 1;
-  const SLIDE_MAP = [];
-  for (let pages = 0; pages < slideNum; pages++) {
-    SLIDE_MAP.push(pages);
-  }
+  const SLIDE_MAP = [...new Array(slideNum)].map((_, index) => index + 1);
 
   return (
     <Swiper

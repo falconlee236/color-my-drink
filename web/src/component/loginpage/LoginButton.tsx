@@ -20,9 +20,7 @@ export default function LoginButton({ name, children }: LoginButtonProps) {
 
   const navigate = useNavigate();
 
-  const clickToLogin = () => {
-    return navigate("/mainpage");
-  };
+  const clickToLogin = () => navigate("/mainpage");
 
   return (
     <button

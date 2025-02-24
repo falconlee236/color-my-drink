@@ -4,9 +4,7 @@ import JuiceSlide from "../component/main-shared/JuiceSlide.tsx";
 export default function Mainpage() {
   const [close, setClose] = useState(true);
 
-  const openModals = () => {
-    setClose(!close);
-  };
+  const openModals = () => setClose(!close);
 
   return (
     <div

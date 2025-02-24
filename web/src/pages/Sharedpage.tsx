@@ -4,14 +4,9 @@ import JuiceSlide from "../component/main-shared/JuiceSlide.tsx";
 export default function Sharedpage() {
   const navigate = useNavigate();
 
-  const toGoNext = () => {
-    return navigate("/step1");
-  };
+  const toGoNext = () => navigate("/step1");
 
-  const toGoLogin = () => {
-    return navigate("/");
-  };
-
+  const toGoLogin = () => navigate("/");
   return (
     <div className="wrap flex h-full flex-col bg-white">
       <div className="h-[740px] w-full bg-[url(./assets/img/bg_main.jpg)] bg-bottom pt-80">
