@@ -20,7 +20,7 @@ function NextBtn(props: NextBtnProps) {
 
   return (
     <button
-      className="bg-button rounded-20 col-span-3 h-55 w-full text-[16px] font-medium text-white"
+      className="col-span-3 h-55 w-full rounded-20 bg-button text-[16px] font-medium text-white"
       onClick={() => {
         clickNext(props.step);
       }}

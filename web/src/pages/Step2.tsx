@@ -1,5 +1,5 @@
-import StepTitle from "./component/StepTitle";
-import FixedBtn from "./component/FixedBtn";
+import StepTitle from "../component/StepTitle";
+import FixedBtn from "../component/FixedBtn";
 import { useEffect, useState } from "react";
 
 function Step2() {
@@ -63,7 +63,7 @@ function Step2() {
   useEffect(() => {
     if (checkedList != null) {
       if (checkedList.length > 3) {
-        onClose();
+        // onClose();
         setAlarm(true);
         setCheckedList(checkedList.slice(0, 3));
       }
@@ -72,7 +72,7 @@ function Step2() {
 
   const sizeList = SIZE_MAP.map((btn) => (
     <button
-      className={`${btn.index === selectedSize ? "bg-green h-55 w-full rounded-full text-[18px] font-semibold text-white" : "bg-ccc25 text-888 h-55 w-full rounded-full text-[18px]"}`}
+      className={`${btn.index === selectedSize ? "h-55 w-full rounded-full bg-green text-[18px] font-semibold text-white" : "h-55 w-full rounded-full bg-ccc25 text-[18px] text-888"}`}
       onClick={() => {
         onClick3(btn.index);
       }}
@@ -95,7 +95,7 @@ function Step2() {
         />
         <label
           htmlFor={btn.index}
-          className="text-888 border-ccc80 rounded-10 peer-checked:border-green peer-checked:text-333 flex h-100 w-full flex-col items-center justify-center border-[2px] border-solid text-[18px] peer-checked:font-medium"
+          className="flex h-100 w-full flex-col items-center justify-center rounded-10 border-[2px] border-solid border-ccc80 text-[18px] text-888 peer-checked:border-green peer-checked:font-medium peer-checked:text-333"
         >
           <div className="flex flex-col items-center justify-center">
             <div className="">{btn.name}</div>
@@ -108,7 +108,7 @@ function Step2() {
 
   const openList = OPEN_MAP.map((btn) => (
     <button
-      className={`${btn.index === selectedOpen ? "bg-green h-55 w-full rounded-full text-[18px] font-semibold text-white" : "bg-ccc25 text-888 h-55 w-full rounded-full text-[18px]"}`}
+      className={`${btn.index === selectedOpen ? "h-55 w-full rounded-full bg-green text-[18px] font-semibold text-white" : "h-55 w-full rounded-full bg-ccc25 text-[18px] text-888"}`}
       onClick={() => {
         onClick5(btn.index);
       }}
@@ -118,7 +118,7 @@ function Step2() {
   ));
 
   return (
-    <div className="wrap h-full bg-bg relative flex flex-col">
+    <div className="wrap relative flex h-full flex-col bg-bg">
       <StepTitle />
       <div className="h-full w-full rounded-t-[20px] bg-white py-30">
         <div className="inner relative m-auto flex h-[100%] flex-col items-center">
@@ -129,7 +129,7 @@ function Step2() {
           <div className="mb-40 w-full">
             <h4 className="mb-15">
               <span className="text-[22px] font-bold">재료 선택</span>
-              <span className="text-555 ml-10 text-[16px] font-medium">
+              <span className="ml-10 text-[16px] font-medium text-555">
                 *최대 3개까지 가능
               </span>
             </h4>
@@ -144,14 +144,14 @@ function Step2() {
         </div>
       </div>
       <div
-        className={`${alarm ? (close ? "absolute -top-[1000px] -left-[1000px]" : "rounded-10 bg-33380 absolute h-full w-full text-white backdrop-blur-xs duration-[0.5s]") : "absolute -top-[1000px] -left-[1000px]"}`}
+        className={`${alarm ? (close ? "absolute -top-[1000px] -left-[1000px]" : "absolute h-full w-full rounded-10 bg-33380 text-white backdrop-blur-xs duration-[0.5s]") : "absolute -top-[1000px] -left-[1000px]"}`}
       >
-        <div className="rounded-10 text-333 relative top-1/2 left-1/2 flex h-150 w-[85%] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-[40px] bg-white">
+        <div className="relative top-1/2 left-1/2 flex h-150 w-[85%] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-[40px] rounded-10 bg-white text-333">
           <h4 className="mt-10 text-[20px] font-semibold">
             재료는 <span className="text-red-500">최대 3개</span>까지 선택
             가능합니다.
           </h4>
-          <button onClick={onClose} className="text-888 font-medium">
+          <button onClick={onClose} className="font-medium text-888">
             닫기
           </button>
         </div>

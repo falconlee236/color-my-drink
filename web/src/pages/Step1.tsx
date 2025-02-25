@@ -1,6 +1,6 @@
 import { useState } from "react";
-import FixedBtn from "./component/FixedBtn";
-import StepTitle from "./component/StepTitle";
+import FixedBtn from "../component/FixedBtn";
+import StepTitle from "../component/StepTitle";
 
 function Step1() {
   const TEMP_MAP = [
@@ -31,7 +31,7 @@ function Step1() {
     <button
       type="button"
       key={btn.index}
-      className={`${slectedTemp === btn.index ? "bg-green h-55 w-full rounded-full text-[18px] font-semibold text-white" : "bg-ccc25 text-888 h-55 w-full rounded-full text-[18px]"}`}
+      className={`${slectedTemp === btn.index ? "h-55 w-full rounded-full bg-green text-[18px] font-semibold text-white" : "h-55 w-full rounded-full bg-ccc25 text-[18px] text-888"}`}
       onClick={() => {
         onClick1(btn.index);
       }}
@@ -44,7 +44,7 @@ function Step1() {
     <button
       type="button"
       key={btn.index}
-      className={`${slectedGlass === btn.index ? "border-green bg-green20 rounded-10 max-h-200 w-full border-[2px] border-solid" : "border-ddd rounded-10 max-h-200 w-full border-[2px] border-solid"}`}
+      className={`${slectedGlass === btn.index ? "max-h-200 w-full rounded-10 border-[2px] border-solid border-green bg-green20" : "max-h-200 w-full rounded-10 border-[2px] border-solid border-ddd"}`}
       onClick={() => {
         onClick2(btn.index);
       }}
@@ -54,7 +54,7 @@ function Step1() {
   ));
 
   return (
-    <div className="wrap h-full bg-bg flex flex-col">
+    <div className="wrap flex h-full flex-col bg-bg">
       <StepTitle />
       <div className="h-full w-full rounded-t-[20px] bg-white py-30">
         <div className="inner relative m-auto flex h-[100%] flex-col items-center">

@@ -8,8 +8,8 @@ function Result() {
   }
 
   return (
-    <div className="wrap bg-green h-full pb-50">
-      <div className="bg-bg h-600 w-full rounded-b-full">
+    <div className="wrap h-full bg-green pb-50">
+      <div className="h-600 w-full rounded-b-full bg-bg">
         <div className="flex h-full flex-col items-center gap-70">
           <h2 className="mt-80 text-[30px] font-bold">음료가 완성됐어요!</h2>
           <div className="h-300 w-300">
@@ -41,7 +41,7 @@ function Result() {
       </div>
       <div className="inner mt-50">
         <button
-          className="bg-button rounded-20 h-55 w-full font-medium text-white"
+          className="h-55 w-full rounded-20 bg-button font-medium text-white"
           onClick={toMainPage}
         >
           처음으로 돌아가기

@@ -1,9 +1,9 @@
-import FixedBtn from "./component/FixedBtn";
-import StepTitle from "./component/StepTitle";
+import FixedBtn from "../component/FixedBtn";
+import StepTitle from "../component/StepTitle";
 
 function Step3() {
   return (
-    <div className="wrap bg-bg flex h-full flex-col">
+    <div className="wrap flex h-full flex-col bg-bg">
       <StepTitle />
       <div className="h-full w-full rounded-t-[20px] bg-white py-30">
         <div className="inner relative m-auto flex h-[100%] flex-col items-center">
@@ -17,7 +17,7 @@ function Step3() {
               <h4 className="text-[18px] font-medium">직접 입력하기</h4>
               <input
                 type="text"
-                className="border-green h-40 w-full border-b-[2px] border-solid px-[5px] text-[16px] focus:outline-0"
+                className="h-40 w-full border-b-[2px] border-solid border-green px-[5px] text-[16px] focus:outline-0"
                 placeholder="8글자 이내로 입력해주세요."
               />
             </div>
@@ -31,7 +31,7 @@ function Step3() {
                 maxLength={5}
                 type="text"
                 placeholder="5글자 이내로 입력해주세요."
-                className="border-green h-40 w-full border-b-[2px] border-solid px-[5px] focus:outline-0"
+                className="h-40 w-full border-b-[2px] border-solid border-green px-[5px] focus:outline-0"
               />
             </div>
             <div>
@@ -40,7 +40,7 @@ function Step3() {
               </h4>
               <textarea
                 maxLength={125}
-                className="bg-green20 rounded-10 h-170 w-full p-20 text-[16px] focus:outline-0"
+                className="h-170 w-full rounded-10 bg-green20 p-20 text-[16px] focus:outline-0"
               />
             </div>
           </div>
