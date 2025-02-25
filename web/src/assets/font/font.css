@@ -1,0 +1,49 @@
+@charset "utf-08";
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('assets/assets/font/pretendard/Pretendard-Bold.eot');
+    src: url('assets/font/pretendard/Pretendard-Bold.eot?#iefix') format('embedded-opentype'),
+        url('assets/font/pretendard/Pretendard-Bold.woff2') format('woff2'),
+        url('assets/font/pretendard/Pretendard-Bold.woff') format('woff'),
+        url('assets/font/pretendard/Pretendard-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('assets/font/pretendard/Pretendard-Medium.eot');
+    src: url('assets/font/pretendard/Pretendard-Medium.eot?#iefix') format('embedded-opentype'),
+        url('assets/font/pretendard/Pretendard-Medium.woff2') format('woff2'),
+        url('assets/font/pretendard/Pretendard-Medium.woff') format('woff'),
+        url('assets/font/pretendard/Pretendard-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('assets/font/pretendard/Pretendard-SemiBold.eot');
+    src: url('assets/font/pretendard/Pretendard-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('assets/font/pretendard/Pretendard-SemiBold.woff2') format('woff2'),
+        url('assets/font/pretendard/Pretendard-SemiBold.woff') format('woff'),
+        url('assets/font/pretendard/Pretendard-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('assets/font/pretendard/Pretendard-Regular.eot');
+    src: url('assets/font/pretendard/Pretendard-Regular.eot?#iefix') format('embedded-opentype'),
+        url('assets/font/pretendard/Pretendard-Regular.woff2') format('woff2'),
+        url('assets/font/pretendard/Pretendard-Regular.woff') format('woff'),
+        url('assets/font/pretendard/Pretendard-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
