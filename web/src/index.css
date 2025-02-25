@@ -1,22 +1,22 @@
+/* font */
+@import url("./assets/font/font.css");
+
 @import "tailwindcss";
-/* @import 'swiper/css';
-@import 'swiper/css/navigation';
-@import 'swiper/css/pagination';
-@import 'swiper/css/scrollbar'; */
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/scrollbar";
 
 @layer theme, base, components, utilities;
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/preflight.css" layer(base);
 @import "tailwindcss/utilities.css" layer(utilities);
 
-@font-face {
-  font-family: "pretendard";
-  src: url("./font/pretendard/stylesheet.css");
-}
 
 @layer base {
   body {
     font-family: "pretendard";
+    line-height: 1;
     color: #333;
     background-color: #212121;
     max-width: 430px;
@@ -33,13 +33,15 @@
     /* height: 100%; */
     margin: 0 auto;
   }
-
 }
 
 @theme {
   /* font-size */
-  --text-55 : 3.438rem;
-  --text-20 : 1.25rem;
+  --text-55: 3.438rem;
+  --text-30: 1.875rem;
+  --text-27: 1.688rem;
+  --text-20: 1.25rem;
+  --text-18: 1.125rem;
 
   /* raidus */
   --radius-10: 10px;
@@ -47,26 +49,27 @@
   --radius-40: 40px;
 
   /* color */
-  --color-kakao: #F4E04A;
+  --color-kakao: #f4e04a;
   --color-google: #fefefe;
   --color-naver: #2eb401;
   --color-bg: #e0decf;
   --color-green: #2e4a3d;
   --color-green20: rgba(46, 74, 61, 0.2);
   --color-button: #212121;
-  --color-btn80 : rgba(33, 33, 33, 0.8);
+  --color-btn80: rgba(33, 33, 33, 0.8);
   --color-333: #333333;
-  --color-33380 : rgba(51, 51, 51, 0.8);
+  --color-33380: rgba(51, 51, 51, 0.8);
   --color-555: #555555;
   --color-888: #888888;
-  --color-ccc : #cccccc;
-  --color-ccc25 : rgba(204, 204, 204, 0.25);
-  --color-ccc80 : rgba(204, 204, 204, 0.8);
-  --color-ddd : #dddddd;
-  --color-fff60 : rgba(255, 255, 255, 0.6);
+  --color-ccc: #cccccc;
+  --color-ccc25: rgba(204, 204, 204, 0.25);
+  --color-ccc80: rgba(204, 204, 204, 0.8);
+  --color-ddd: #dddddd;
+  --color-fff60: rgba(255, 255, 255, 0.6);
 
-  /* spacing */  
+  /* spacing */
   --spacing-10: 10px;
+  --spacing-12: 12px;
   --spacing-15: 15px;
   --spacing-18: 18px;
   --spacing-20: 20px;
