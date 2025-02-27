@@ -2,12 +2,8 @@ import PaginationBtn from "../component/orderpage/PaginationBtn";
 import OrderTitle from "../component/orderpage/OrderTitle";
 import { useEffect, useState } from "react";
 
-function Step3() {
-  const NAME_MAP = [
-    { name: "예시1", index: "6-1" },
-    { name: "예시2", index: "6-2" },
-    { name: "예시3", index: "6-3" },
-  ];
+export default function OrderNameMessage() {
+  const NAME_MAP = [{ name: "예시1" }, { name: "예시2" }, { name: "예시3" }];
 
   const [selectedName, setSelectedName] = useState<string | null>(null);
   const [inputName, setInputName] = useState<string | null>(null);
@@ -44,18 +40,18 @@ function Step3() {
     setStorageInputMessage(e.target.value);
   };
 
-  const nameList = NAME_MAP.map((btn) => (
+  const nameList = NAME_MAP.map((btn, index) => (
     <button
-      key={btn.index}
+      key={`name-${index}`}
       className={`h-55 w-full rounded-full text-18 ${
         storageName != null
-          ? btn.index === storageName
+          ? `name-${index}` === storageName
             ? "bg-green font-semibold text-white"
             : "bg-ccc25 text-888"
           : "bg-ccc25 text-888"
       }`}
       onClick={() => {
-        clickName(btn.index);
+        clickName(`name-${index}`);
       }}
     >
       {btn.name}
@@ -128,11 +124,13 @@ function Step3() {
               />
             </div>
           </div>
-          <PaginationBtn currentOrder="order3" next="완료하기" prev="이전" />
+          <PaginationBtn
+            currentOrder="OrderNameMessage"
+            next="완료하기"
+            prev="이전"
+          />
         </div>
       </div>
     </div>
   );
 }
-
-export default Step3;

@@ -9,10 +9,10 @@ export default function NextBtn(props: NextBtnProps) {
   const navigate = useNavigate();
 
   const clickPageNext = (currentOrder: string) => {
-    if (currentOrder === "order1") {
-      navigate("/order2");
-    } else if (currentOrder === "order2") {
-      navigate("/order3");
+    if (currentOrder === "OrderTemperatureCup") {
+      navigate("/OrderSizeIngredientAccess");
+    } else if (currentOrder === "OrderSizeIngredientAccess") {
+      navigate("/OrderNameMessage");
     } else if (currentOrder === "order3") {
       navigate("/loading");
     }

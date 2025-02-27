@@ -2,7 +2,7 @@ import OrderTitle from "../component/orderpage/OrderTitle";
 import PaginationBtn from "../component/orderpage/PaginationBtn";
 import { useEffect, useState } from "react";
 
-export default function Order2() {
+export default function OrderSizeIngredientAccess() {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedIngredient, setSelectedIngredient] = useState<string[]>(
     JSON.parse(sessionStorage.getItem("selectedIngredient") || "[]"),
@@ -13,27 +13,24 @@ export default function Order2() {
   const [toggleAlarm, setToggleAlarm] = useState(false);
 
   const SIZE_MAP = [
-    { name: "Short", index: "3-1" },
-    { name: "Tall", index: "3-2" },
-    { name: "Grande", index: "3-3" },
-    { name: "Venti", index: "3-4" },
+    { name: "Short" },
+    { name: "Tall" },
+    { name: "Grande" },
+    { name: "Venti" },
   ];
 
   const INGREDIENT_MAP = [
-    { name: "행복", index: "4-1", img: "../src/assets/img/ingredient/1.png" },
-    { name: "건강", index: "4-2", img: "../src/assets/img/ingredient/2.png" },
-    { name: "성취", index: "4-3", img: "../src/assets/img/ingredient/3.png" },
-    { name: "금전", index: "4-4", img: "../src/assets/img/ingredient/4.png" },
-    { name: "행운", index: "4-5", img: "../src/assets/img/ingredient/5.png" },
-    { name: "사랑", index: "4-6", img: "../src/assets/img/ingredient/6.png" },
-    { name: "학업", index: "4-7", img: "../src/assets/img/ingredient/7.png" },
-    { name: "온정", index: "4-8", img: "../src/assets/img/ingredient/8.png" },
+    { name: "행복", img: "../src/assets/img/ingredient/1.png" },
+    { name: "건강", img: "../src/assets/img/ingredient/2.png" },
+    { name: "성취", img: "../src/assets/img/ingredient/3.png" },
+    { name: "금전", img: "../src/assets/img/ingredient/4.png" },
+    { name: "행운", img: "../src/assets/img/ingredient/5.png" },
+    { name: "사랑", img: "../src/assets/img/ingredient/6.png" },
+    { name: "학업", img: "../src/assets/img/ingredient/7.png" },
+    { name: "온정", img: "../src/assets/img/ingredient/8.png" },
   ];
 
-  const ACCESS_MAP = [
-    { name: "전체공개", index: "5-1" },
-    { name: "비공개", index: "5-2" },
-  ];
+  const ACCESS_MAP = [{ name: "전체공개" }, { name: "비공개" }];
 
   const onClickSize = (index: string) => setSelectedSize(index);
 
@@ -92,38 +89,38 @@ export default function Order2() {
     }
   }, [selectedIngredient, selectedSize, selectedAccess, toggleAlarm]);
 
-  const sizeList = SIZE_MAP.map((btn) => (
+  const sizeList = SIZE_MAP.map((btn, index) => (
     <button
-      key={btn.index}
+      key={`size-${index}`}
       className={`h-55 w-full rounded-full text-18 ${
         storageSize != null
-          ? storageSize === btn.index
+          ? storageSize === `size-${index}`
             ? "bg-green font-semibold text-white"
             : "bg-ccc25 text-888"
           : "bg-ccc25 text-888"
       }`}
       onClick={() => {
-        onClickSize(btn.index);
+        onClickSize(`size-${index}`);
       }}
     >
       {btn.name}
     </button>
   ));
 
-  const ingredientList = INGREDIENT_MAP.map((btn) => {
+  const ingredientList = INGREDIENT_MAP.map((btn, index) => {
     return (
-      <li key={btn.index}>
+      <li key={`ingredient-${index}`}>
         <input
           type="checkbox"
-          id={btn.index}
+          id={`ingredient-${index}`}
           className="peer hidden"
-          checked={selectedIngredient?.includes(btn.index)}
+          checked={selectedIngredient?.includes(`ingredient-${index}`)}
           onChange={(e) => {
-            clickIngredient(e, btn.index);
+            clickIngredient(e, `ingredient-${index}`);
           }}
         />
         <label
-          htmlFor={btn.index}
+          htmlFor={`ingredient-${index}`}
           className="flex h-100 w-full flex-col items-center justify-center rounded-10 border-[2px] border-solid border-ccc80 text-18 text-888 peer-checked:border-green peer-checked:bg-green10 peer-checked:font-medium peer-checked:text-333"
         >
           <div className="flex flex-col items-center justify-center">
@@ -135,18 +132,18 @@ export default function Order2() {
     );
   });
 
-  const accessList = ACCESS_MAP.map((btn) => (
+  const accessList = ACCESS_MAP.map((btn, index) => (
     <button
-      key={btn.index}
+      key={`access-${index}`}
       className={`h-55 w-full rounded-full text-18 ${
         storageAccess != null
-          ? storageAccess === btn.index
+          ? storageAccess === `access-${index}`
             ? "bg-green font-semibold text-white"
             : "bg-ccc25 text-888"
           : "bg-ccc25 text-888"
       }`}
       onClick={() => {
-        onClickAccess(btn.index);
+        onClickAccess(`access-${index}`);
       }}
     >
       {btn.name}
@@ -176,7 +173,11 @@ export default function Order2() {
             <div className="grid grid-cols-2 gap-14">{accessList}</div>
           </div>
 
-          <PaginationBtn currentOrder="order2" next="다음" prev="이전" />
+          <PaginationBtn
+            currentOrder="OrderSizeIngredientAccess"
+            next="다음"
+            prev="이전"
+          />
         </div>
       </div>
       <div

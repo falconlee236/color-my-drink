@@ -5,7 +5,7 @@ export default function Sharedpage() {
   const navigate = useNavigate();
 
   const toGoNext = () => {
-    navigate("/order1");
+    navigate("/OrderTemperatureCup");
     sessionStorage.clear();
   };
 
