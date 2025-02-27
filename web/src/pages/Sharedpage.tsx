@@ -4,7 +4,10 @@ import JuiceSlide from "../component/main-shared/JuiceSlide.tsx";
 export default function Sharedpage() {
   const navigate = useNavigate();
 
-  const toGoNext = () => navigate("/step1");
+  const toGoNext = () => {
+    navigate("/order1");
+    sessionStorage.clear();
+  };
 
   const toGoLogin = () => navigate("/");
   return (
@@ -12,7 +15,7 @@ export default function Sharedpage() {
       <div className="h-[740px] w-full bg-[url(./assets/img/bg_main.jpg)] bg-bottom pt-80">
         <div className="m-auto max-w-inner">
           <div className="mb-80 text-center">
-            <h1 className="mb-15 text-27 font-bold text-green">
+            <h1 className="mb-15 text-28 font-bold text-green">
               정원님에게 음료를 선물하세요!
             </h1>
             <h2 className="text-18 font-medium">

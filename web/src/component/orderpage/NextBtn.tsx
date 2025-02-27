@@ -1,33 +1,31 @@
 import { useNavigate } from "react-router";
 
 interface NextBtnProps {
-  step: string;
+  orderNum: string;
   word: string;
 }
 
-function NextBtn(props: NextBtnProps) {
+export default function NextBtn(props: NextBtnProps) {
   const navigate = useNavigate();
 
-  function clickNext(prevStep: string) {
-    if (prevStep === "step1") {
-      navigate("/step2");
-    } else if (prevStep === "step2") {
-      navigate("/step3");
-    } else if (prevStep === "step3") {
+  const clickPageNext = (currentOrder: string) => {
+    if (currentOrder === "order1") {
+      navigate("/order2");
+    } else if (currentOrder === "order2") {
+      navigate("/order3");
+    } else if (currentOrder === "order3") {
       navigate("/loading");
     }
-  }
+  };
 
   return (
     <button
       className="col-span-3 h-55 w-full rounded-20 bg-button text-[16px] font-medium text-white"
       onClick={() => {
-        clickNext(props.step);
+        clickPageNext(props.orderNum);
       }}
     >
       {props.word}
     </button>
   );
 }
-
-export default NextBtn;
