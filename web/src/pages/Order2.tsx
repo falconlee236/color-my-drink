@@ -108,7 +108,7 @@ export default function Order2() {
       sessionStorage.setItem("selectedAccess", selectedAccess);
       setStorageAccess(selectedAccess);
     }
-  }, [selectedIngredient, selectedSize, selectedAccess, isChecked]);
+  }, [selectedIngredient, selectedSize, selectedAccess, toggleAlarm]);
 
   const sizeList = SIZE_MAP.map((btn) => (
     <button
