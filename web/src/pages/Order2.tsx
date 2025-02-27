@@ -38,34 +38,16 @@ export default function Order2() {
   const onClickSize = (index: string) => setSelectedSize(index);
 
   const checkedIngredient = (value: string, isChecked: boolean) => {
-    if (isChecked) {
-      setSelectedIngredient((prev) => {
-        const updateSelectedIngredient = [...(prev || []), value];
-        sessionStorage.setItem(
-          "selectedIngredient",
-          JSON.stringify(updateSelectedIngredient),
-        );
-        return updateSelectedIngredient;
-      });
-    }
-
-    if (!isChecked && selectedIngredient?.includes(value)) {
-      setSelectedIngredient(() => {
-        const updateSelectedIngredient = selectedIngredient.filter(
-          (item) => item !== value,
-        );
-        sessionStorage.setItem(
-          "selectedIngredient",
-          JSON.stringify(updateSelectedIngredient),
-        );
-        return updateSelectedIngredient;
-      });
-    }
-
-    sessionStorage.setItem(
-      "selectedIngredient",
-      JSON.stringify(selectedIngredient),
-    );
+    setSelectedIngredient((prev) => {
+      const updateSelectedIngredient = isChecked
+        ? [...(prev || []), value]
+        : selectedIngredient.filter((item) => item !== value);
+      sessionStorage.setItem(
+        "selectedIngredient",
+        JSON.stringify(updateSelectedIngredient),
+      );
+      return updateSelectedIngredient;
+    });
   };
 
   const clickIngredient = (
