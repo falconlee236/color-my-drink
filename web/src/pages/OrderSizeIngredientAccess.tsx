@@ -1,17 +1,17 @@
 import OrderTitle from "../component/orderpage/OrderTitle";
 import PaginationBtn from "../component/orderpage/PaginationBtn";
-import { useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { selectSize, updateSize } from "../store/features/orders/sizeSlice";
+import {
+  selectAccess,
+  updateAccess,
+} from "../store/features/orders/accessSlice";
+import {
+  selectIngredient,
+  updateIngredient,
+} from "../store/features/orders/ingredientSlice";
 
 export default function OrderSizeIngredientAccess() {
-  const [selectedSize, setSelectedSize] = useState<string | null>(null);
-  const [selectedIngredient, setSelectedIngredient] = useState<string[]>(
-    JSON.parse(sessionStorage.getItem("selectedIngredient") || "[]"),
-  );
-  const [isChecked, setIsChecked] = useState(false);
-  const [selectedAccess, setSelectedAccess] = useState<string | null>(null);
-  const [alarm, setAlarm] = useState(false);
-  const [toggleAlarm, setToggleAlarm] = useState(false);
-
   const SIZE_MAP = [
     { name: "Short" },
     { name: "Tall" },
@@ -32,75 +32,29 @@ export default function OrderSizeIngredientAccess() {
 
   const ACCESS_MAP = [{ name: "전체공개" }, { name: "비공개" }];
 
-  const onClickSize = (index: string) => setSelectedSize(index);
+  const dispatch = useAppDispatch();
+  const currentSize = useAppSelector(selectSize);
+  const currentAccess = useAppSelector(selectAccess);
+  const currentIngredient = useAppSelector(selectIngredient);
 
-  const checkedIngredient = (value: string, isChecked: boolean) => {
-    setSelectedIngredient((prev) => {
-      const updateSelectedIngredient = isChecked
-        ? [...(prev || []), value]
-        : selectedIngredient.filter((item) => item !== value);
-      sessionStorage.setItem(
-        "selectedIngredient",
-        JSON.stringify(updateSelectedIngredient),
-      );
-      return updateSelectedIngredient;
-    });
-  };
+  const clickSize = (index: string) => dispatch(updateSize(index));
 
-  const clickIngredient = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    value: string,
-  ) => {
-    setIsChecked(!isChecked);
-    checkedIngredient(value, e.target.checked);
-  };
+  const clickAccess = (index: string) => dispatch(updateAccess(index));
 
-  const onClickAccess = (index: string) => setSelectedAccess(index);
-
-  const [storageSize, setStorageSize] = useState(
-    sessionStorage.getItem("selectedSize"),
-  );
-
-  const [storageAccess, setStorageAccess] = useState(
-    sessionStorage.getItem("selectedAccess"),
-  );
-
-  useEffect(() => {
-    if (selectedIngredient != null) {
-      if (selectedIngredient.length > 3) {
-        setToggleAlarm(!toggleAlarm);
-        setAlarm(true);
-        setSelectedIngredient(selectedIngredient.slice(0, 3));
-        sessionStorage.setItem(
-          "selectedIngredient",
-          JSON.stringify(selectedIngredient.slice(0, 3)),
-        );
-      }
-    }
-
-    if (selectedSize != null) {
-      sessionStorage.setItem("selectedSize", selectedSize);
-      setStorageSize(selectedSize);
-    }
-
-    if (selectedAccess != null) {
-      sessionStorage.setItem("selectedAccess", selectedAccess);
-      setStorageAccess(selectedAccess);
-    }
-  }, [selectedIngredient, selectedSize, selectedAccess, toggleAlarm]);
+  const clickIngredient = (index: string) => dispatch(updateIngredient(index));
 
   const sizeList = SIZE_MAP.map((btn, index) => (
     <button
       key={`size-${index}`}
       className={`h-55 w-full rounded-full text-18 ${
-        storageSize != null
-          ? storageSize === `size-${index}`
+        currentSize != null
+          ? currentSize.size === `size-${index}`
             ? "bg-green font-semibold text-white"
             : "bg-ccc25 text-888"
           : "bg-ccc25 text-888"
       }`}
       onClick={() => {
-        onClickSize(`size-${index}`);
+        clickSize(`size-${index}`);
       }}
     >
       {btn.name}
@@ -114,9 +68,11 @@ export default function OrderSizeIngredientAccess() {
           type="checkbox"
           id={`ingredient-${index}`}
           className="peer hidden"
-          checked={selectedIngredient?.includes(`ingredient-${index}`)}
-          onChange={(e) => {
-            clickIngredient(e, `ingredient-${index}`);
+          checked={currentIngredient.ingredient?.includes(
+            `ingredient-${index}`,
+          )}
+          onChange={() => {
+            clickIngredient(`ingredient-${index}`);
           }}
         />
         <label
@@ -136,14 +92,14 @@ export default function OrderSizeIngredientAccess() {
     <button
       key={`access-${index}`}
       className={`h-55 w-full rounded-full text-18 ${
-        storageAccess != null
-          ? storageAccess === `access-${index}`
+        currentAccess != null
+          ? currentAccess.access === `access-${index}`
             ? "bg-green font-semibold text-white"
             : "bg-ccc25 text-888"
           : "bg-ccc25 text-888"
       }`}
       onClick={() => {
-        onClickAccess(`access-${index}`);
+        clickAccess(`access-${index}`);
       }}
     >
       {btn.name}
@@ -151,7 +107,7 @@ export default function OrderSizeIngredientAccess() {
   ));
 
   return (
-    <div className="wrap relative h-full bg-bg">
+    <div className="wrap h-full bg-bg">
       <OrderTitle />
       <div className="h-full w-full rounded-t-20 bg-white pt-40 pb-50">
         <div className="inner mx-auto h-full">
@@ -178,30 +134,6 @@ export default function OrderSizeIngredientAccess() {
             next="다음"
             prev="이전"
           />
-        </div>
-      </div>
-      <div
-        className={`absolute ${
-          alarm
-            ? toggleAlarm
-              ? "top-0 left-0 block h-full w-full rounded-10 bg-33380 text-white backdrop-blur-[2px]"
-              : "hidden"
-            : "hidden"
-        }`}
-      >
-        <div className="relative top-1/2 left-1/2 flex h-150 w-[85%] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-40 rounded-10 bg-white text-333">
-          <h4 className="mt-10 text-20 font-semibold">
-            재료는 <span className="text-red-500">최대 3개</span>까지 선택
-            가능합니다.
-          </h4>
-          <button
-            onClick={() => {
-              setToggleAlarm(!toggleAlarm);
-            }}
-            className="font-medium text-888"
-          >
-            닫기
-          </button>
         </div>
       </div>
     </div>

@@ -1,9 +1,13 @@
 import { useNavigate } from "react-router";
+import { useAppSelector } from "../store/hooks";
+import { selectName } from "../store/features/orders/nameSlice";
 
 export default function Result() {
   const navigate = useNavigate();
 
   const toGoSharedpage = () => navigate("/sharedpage");
+
+  const name = useAppSelector(selectName);
 
   return (
     <div className="wrap h-full bg-green">
@@ -23,7 +27,7 @@ export default function Result() {
       </div>
       <div className="inner text-center text-white">
         <h4 className="mt-40 text-20 font-semibold">베어드님의 선물</h4>
-        <h3 className="mt-20 text-32 font-bold">골든 하모니</h3>
+        <h3 className="mt-20 text-32 font-bold">{name.name}</h3>
         <div className="mx-auto mt-20 h-20 w-20">
           <img
             className="h-full w-full object-contain"

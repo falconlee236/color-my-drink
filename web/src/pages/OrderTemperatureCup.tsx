@@ -1,6 +1,11 @@
-import { useEffect, useState } from "react";
 import PaginationBtn from "../component/orderpage/PaginationBtn.tsx";
 import OrderTitle from "../component/orderpage/OrderTitle.tsx";
+import { useAppDispatch, useAppSelector } from "../store/hooks.ts";
+import {
+  selectTemperature,
+  updateTemperature,
+} from "../store/features/orders/temperatureSlice.ts";
+import { selectCup, updateCup } from "../store/features/orders/cupSlice.ts";
 
 export default function OrderTemperatureCup() {
   const TEMPERATURE_MAP = [
@@ -16,34 +21,28 @@ export default function OrderTemperatureCup() {
     { url: "../src/assets/img/cup4.png" },
   ];
 
-  const [selectedTemperature, setSelectedTemperature] = useState<string | null>(
-    null,
-  );
-  const [selectedCup, setSelectedCup] = useState<string | null>(null);
-  const [storageTemperature, setStorageTemperature] = useState(
-    sessionStorage.getItem("selectedTemperature"),
-  );
-  const [storageCup, setStorageCup] = useState(
-    sessionStorage.getItem("selectedCup"),
-  );
+  const currentTemperature = useAppSelector(selectTemperature);
+  const currentCup = useAppSelector(selectCup);
 
-  const onClickTemperature = (index: string) => setSelectedTemperature(index);
+  const dispatch = useAppDispatch();
 
-  const onClickCup = (index: string) => setSelectedCup(index);
+  const clickTemperature = (index: string) =>
+    dispatch(updateTemperature(index));
+  const clickCup = (index: string) => dispatch(updateCup(index));
 
   const TemperatureList = TEMPERATURE_MAP.map((btn, index) => (
     <button
       type="button"
       key={`temperature-${index}`}
       className={`h-55 w-full rounded-full text-18 ${
-        storageTemperature != null
-          ? storageTemperature === `temperature-${index}`
+        currentTemperature != null
+          ? currentTemperature.temperature === `temperature-${index}`
             ? "bg-green font-semibold text-white"
             : "bg-ccc25 text-888"
           : "bg-ccc25 text-888"
       }`}
       onClick={() => {
-        onClickTemperature(`temperature-${index}`);
+        clickTemperature(`temperature-${index}`);
       }}
     >
       {btn.name}
@@ -55,30 +54,19 @@ export default function OrderTemperatureCup() {
       type="button"
       key={`cup-${index}`}
       className={`max-h-210 w-full rounded-10 border-[2px] border-solid ${
-        storageCup != null
-          ? storageCup === `cup-${index}`
+        currentCup != null
+          ? currentCup.cup === `cup-${index}`
             ? "border-green bg-green10"
             : "border-ddd"
           : "border-ddd"
       }`}
       onClick={() => {
-        onClickCup(`cup-${index}`);
+        clickCup(`cup-${index}`);
       }}
     >
       <img className="h-[90%] w-full object-contain" src={btn.url} alt="cup" />
     </button>
   ));
-
-  useEffect(() => {
-    if (selectedTemperature != null) {
-      sessionStorage.setItem("selectedTemperature", selectedTemperature);
-      setStorageTemperature(selectedTemperature);
-    }
-    if (selectedCup != null) {
-      sessionStorage.setItem("selectedCup", selectedCup);
-      setStorageCup(selectedCup);
-    }
-  }, [selectedTemperature, selectedCup]);
 
   return (
     <div className="wrap h-full bg-bg">

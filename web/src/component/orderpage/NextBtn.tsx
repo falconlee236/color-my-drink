@@ -13,7 +13,7 @@ export default function NextBtn(props: NextBtnProps) {
       navigate("/OrderSizeIngredientAccess");
     } else if (currentOrder === "OrderSizeIngredientAccess") {
       navigate("/OrderNameMessage");
-    } else if (currentOrder === "order3") {
+    } else if (currentOrder === "OrderNameMessage") {
       navigate("/loading");
     }
   };

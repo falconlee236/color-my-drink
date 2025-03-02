@@ -1,51 +1,50 @@
 import PaginationBtn from "../component/orderpage/PaginationBtn";
 import OrderTitle from "../component/orderpage/OrderTitle";
-import { useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import {
+  selectName,
+  updateAiName,
+  updateUserName,
+} from "../store/features/orders/nameSlice";
+import {
+  selectLetterSender,
+  updateLetterSender,
+} from "../store/features/orders/letterSenderSlice";
+import {
+  selectLetterContent,
+  updateLetterContent,
+} from "../store/features/orders/letterContentSlice";
 
 export default function OrderNameMessage() {
   const NAME_MAP = [{ name: "예시1" }, { name: "예시2" }, { name: "예시3" }];
 
-  const [selectedName, setSelectedName] = useState<string | null>(null);
-  const [inputName, setInputName] = useState<string | null>(null);
-  const [inputSender, setInputSender] = useState<string | null>(null);
-  const [inputMessage, setInputMessage] = useState<string | null>(null);
+  const dispatch = useAppDispatch();
 
-  const [storageName, setStorageName] = useState(
-    sessionStorage.getItem("selectedName"),
-  );
-  const [storageInputName, setStorageInputName] = useState(
-    sessionStorage.getItem("inputName"),
-  );
-  const [storageInputSender, setStorageInputSender] = useState(
-    sessionStorage.getItem("inputSender"),
-  );
-  const [storageInputMessage, setStorageInputMessage] = useState(
-    sessionStorage.getItem("inputMessage"),
-  );
+  const currentAiName = useAppSelector(selectName);
+  const currentUserName = useAppSelector(selectName);
+  const currentLetterSender = useAppSelector(selectLetterSender);
+  const currentLetterContent = useAppSelector(selectLetterContent);
 
-  const clickName = (index: string) => setSelectedName(index);
+  const clickName = (index: string) => dispatch(updateAiName(index));
 
-  const writeName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputName(e.target.value);
-    setStorageInputName(e.target.value);
+  const inputUserName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(updateUserName(e.target.value));
   };
 
-  const wrtieSender = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputSender(e.target.value);
-    setStorageInputSender(e.target.value);
+  const inputLetterSender = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(updateLetterSender(e.target.value));
   };
 
-  const writeMessage = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setInputMessage(e.target.value);
-    setStorageInputMessage(e.target.value);
+  const inputLetterContent = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    dispatch(updateLetterContent(e.target.value));
   };
 
   const nameList = NAME_MAP.map((btn, index) => (
     <button
       key={`name-${index}`}
       className={`h-55 w-full rounded-full text-18 ${
-        storageName != null
-          ? `name-${index}` === storageName
+        currentAiName != null
+          ? `name-${index}` === currentAiName.name
             ? "bg-green font-semibold text-white"
             : "bg-ccc25 text-888"
           : "bg-ccc25 text-888"
@@ -57,25 +56,6 @@ export default function OrderNameMessage() {
       {btn.name}
     </button>
   ));
-
-  useEffect(() => {
-    if (selectedName != null) {
-      sessionStorage.setItem("selectedName", selectedName);
-      setStorageName(selectedName);
-    }
-    if (inputName != null) {
-      sessionStorage.setItem("inputName", inputName);
-      setStorageInputName(inputName);
-    }
-    if (inputSender != null) {
-      sessionStorage.setItem("inputSender", inputSender);
-      setStorageInputSender(inputSender);
-    }
-    if (inputMessage != null) {
-      sessionStorage.setItem("inputMessage", inputMessage);
-      setStorageInputMessage(inputMessage);
-    }
-  }, [selectedName, inputName, inputMessage, inputSender]);
 
   return (
     <div className="wrap h-full bg-bg">
@@ -92,11 +72,11 @@ export default function OrderNameMessage() {
               <h4 className="text-20 font-medium">직접 입력하기</h4>
               <input
                 type="text"
-                value={`${storageInputName ? storageInputName : ""}`}
+                value={`${currentUserName ? currentUserName.name : ""}`}
                 className="mt-15 h-40 w-full border-b-[2px] border-solid border-green px-5 text-18 focus:outline-0"
                 placeholder="8글자 이내로 입력해주세요."
                 maxLength={8}
-                onChange={(e) => writeName(e)}
+                onChange={(e) => inputUserName(e)}
               />
             </div>
           </div>
@@ -107,20 +87,20 @@ export default function OrderNameMessage() {
               <h4 className="text-20 font-medium">보내는 이</h4>
               <input
                 type="text"
-                value={`${storageInputSender ? storageInputSender : ""}`}
+                value={`${currentLetterSender ? currentLetterSender.letterSender : ""}`}
                 maxLength={5}
                 placeholder="5글자 이내로 입력해주세요."
                 className="mt-15 h-40 w-full border-b-[2px] border-solid border-green px-5 text-18 focus:outline-0"
-                onChange={(e) => wrtieSender(e)}
+                onChange={(e) => inputLetterSender(e)}
               />
             </div>
             <div className="mt-25">
               <h4 className="text-20 font-medium">내용 입력하기(200byte)</h4>
               <textarea
-                value={`${storageInputMessage ? storageInputMessage : ""}`}
+                value={`${currentLetterContent ? currentLetterContent.letterContent : ""}`}
                 maxLength={125}
                 className="mt-15 h-170 w-full rounded-10 bg-green10 p-20 text-18 focus:outline-0"
-                onChange={(e) => writeMessage(e)}
+                onChange={(e) => inputLetterContent(e)}
               />
             </div>
           </div>
