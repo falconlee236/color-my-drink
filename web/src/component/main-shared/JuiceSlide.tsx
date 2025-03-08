@@ -17,29 +17,29 @@ export default function JuiceSlide(props: JuiceSlideProps) {
       slidesPerView={1}
       navigation
     >
-      {SLIDE_MAP.map((page) => (
-        <SwiperSlide key={slideNum}>
+      {SLIDE_MAP.map((page, index) => (
+        <SwiperSlide key={`${slideNum}-${index}`}>
           <div className="mb-18 flex justify-center gap-18">
-            <JuiceItem index={`${page}.1`} />
-            <JuiceItem index={`${page}.2`} />
-            <JuiceItem index={`${page}.3`} />
+            <JuiceItem num={`${page}.0`} />
+            <JuiceItem num={`${page}.1`} />
+            <JuiceItem num={`${page}.2`} />
           </div>
           <div className="mb-18 flex justify-center gap-18">
-            <JuiceItem index={`${page}.4`} />
-            <JuiceItem index={`${page}.5`} />
-            <JuiceItem index={`${page}.6`} />
-            <JuiceItem index={`${page}.7`} />
+            <JuiceItem num={`${page}.3`} />
+            <JuiceItem num={`${page}.4`} />
+            <JuiceItem num={`${page}.5`} />
+            <JuiceItem num={`${page}.6`} />
           </div>
           <div className="mb-18 flex justify-center gap-18">
-            <JuiceItem index={`${page}.8`} />
-            <JuiceItem index={`${page}.9`} />
-            <JuiceItem index={`${page}.10`} />
-            <JuiceItem index={`${page}.11`} />
+            <JuiceItem num={`${page}.7`} />
+            <JuiceItem num={`${page}.8`} />
+            <JuiceItem num={`${page}.9`} />
+            <JuiceItem num={`${page}.10`} />
           </div>
           <div className="mb-18 flex justify-center gap-18">
-            <JuiceItem index={`${page}.12`} />
-            <JuiceItem index={`${page}.13`} />
-            <JuiceItem index={`${page}.14`} />
+            <JuiceItem num={`${page}.11`} />
+            <JuiceItem num={`${page}.12`} />
+            <JuiceItem num={`${page}.13`} />
           </div>
         </SwiperSlide>
       ))}
