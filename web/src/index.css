@@ -12,7 +12,6 @@
 @import "tailwindcss/preflight.css" layer(base);
 @import "tailwindcss/utilities.css" layer(utilities);
 
-
 @layer base {
   body {
     font-family: "pretendard";
@@ -49,6 +48,7 @@
   --radius-10: 10px;
   --radius-20: 20px;
   --radius-40: 40px;
+  --radius-185: 185px;
 
   /* color */
   --color-kakao: #f4e04a;
@@ -77,9 +77,11 @@
   --spacing-15: 15px;
   --spacing-18: 18px;
   --spacing-20: 20px;
+  --spacing-24: 24px;
   --spacing-25: 25px;
   --spacing-30: 30px;
   --spacing-40: 40px;
+  --spacing-45: 45px;
   --spacing-50: 50px;
   --spacing-55: 55px;
   --spacing-60: 60px;
@@ -87,12 +89,16 @@
   --spacing-80: 80px;
   --spacing-100: 100px;
   --spacing-120: 120px;
+  --spacing-130: 130px;
   --spacing-150: 150px;
-  --spacing-170: 170px;
+  --spacing-160: 160px;
+  --spacing-180: 180px;
   --spacing-200: 200px;
   --spacing-210: 210px;
   --spacing-250: 250px;
+  /* --spacing-270: 270px; */
   --spacing-300: 300px;
+  --spacing-430: 430px;
   --spacing-600: 600px;
   --spacing-inner: calc(100% - 30px);
 }
