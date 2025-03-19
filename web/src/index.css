@@ -107,4 +107,5 @@
   --spacing-430: 430px;
   --spacing-600: 600px;
   --spacing-inner: calc(100% - 30px);
+  --spacing-innerModal: calc(100% - 60px);
 }
