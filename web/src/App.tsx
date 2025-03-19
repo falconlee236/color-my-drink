@@ -7,6 +7,7 @@ import OrderSizeIngredientAccess from "./pages/OrderSizeIngredientAccess.tsx";
 import OrderNameMessage from "./pages/OrderNameMessage.tsx";
 import Loading from "./pages/Loading.tsx";
 import Result from "./pages/Result.tsx";
+import Community from "./pages/Community.tsx";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/OrderNameMessage" element={<OrderNameMessage />} />
         <Route path="/loading" element={<Loading />} />
         <Route path="/result" element={<Result />} />
+        <Route path="/community" element={<Community />} />
       </Routes>
     </BrowserRouter>
   );
