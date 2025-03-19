@@ -90,7 +90,7 @@ export default function JuiceDetailModal() {
         </div>
         <div className="flex justify-start">
           <button
-            className="flex cursor-pointer items-center gap-5 hover:-translate-x-[7px] duration-300"
+            className="flex cursor-pointer items-center gap-5 duration-300 hover:-translate-x-[7px]"
             onClick={moveModalPage}
           >
             <div className="h-24 w-24">
@@ -111,7 +111,7 @@ export default function JuiceDetailModal() {
         </div>
       </div>
       <button
-        className="flex h-55 w-55 cursor-pointer items-center justify-center rounded-full bg-green hover:bg-[#253a32] duration-300"
+        className="flex h-55 w-55 cursor-pointer items-center justify-center rounded-full bg-green duration-300 hover:bg-[#253a32]"
         onClick={openCloseModal}
       >
         <div className="h-25 w-25">
