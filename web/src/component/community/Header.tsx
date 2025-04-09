@@ -6,7 +6,7 @@ interface HeaderProps {
 
 export default function Header(props: HeaderProps) {
   const navigate = useNavigate();
-  const goToMainpage = () => navigate('/mainpage')
+  const goToMainpage = () => navigate("/mainpage");
   return (
     <div className="h-55 w-full bg-white">
       <div className="m-auto flex h-full w-inner items-center justify-between">
