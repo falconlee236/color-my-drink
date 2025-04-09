@@ -2,9 +2,12 @@ import JuiceSlide from "../component/main-shared/JuiceSlide.tsx";
 import { useAppSelector } from "../store/hooks.ts";
 import { valueClickModal } from "../store/features/main-sharedPage/clickModalSlice.ts";
 import JuiceDetailModal from "../component/main-shared/JuiceDetailModal.tsx";
+import { useNavigate } from "react-router";
 
 export default function Mainpage() {
   const currentClickModal = useAppSelector(valueClickModal);
+  const navigate = useNavigate();
+  const goToCommunity = () => navigate('/community')
 
   return (
     <div className="wrap relative flex h-full flex-col bg-white">
@@ -30,7 +33,7 @@ export default function Mainpage() {
             MY 음료 데이터 보기
           </button>
           <div className="flex gap-10">
-            <button className="h-55 w-1/2 rounded-20 border border-solid border-button bg-white font-medium">
+            <button className="h-55 w-1/2 rounded-20 border border-solid border-button bg-white font-medium" onClick={goToCommunity}>
               커뮤니티
             </button>
             <button className="h-55 w-1/2 rounded-20 border border-solid border-button bg-white font-medium">

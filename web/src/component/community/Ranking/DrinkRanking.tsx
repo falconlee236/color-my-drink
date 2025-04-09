@@ -1,6 +1,75 @@
 import ContentTitle from "../ContentTitle";
+import RestRanking from "./Amount/RestRanking";
+import TopThree from "./Amount/TopThree";
 
 export default function DrinkingRanking() {
+  const TEST_DATA_TOP3 = [
+    {
+      name: "가나다",
+      rank: 1,
+      amount: 100,
+      url: "../../../../src/assets/img/example-profile.jpg",
+    },
+    {
+      name: "라마바",
+      rank: 2,
+      amount: 90,
+      url: "../../../../src/assets/img/example-profile.jpg",
+    },
+    {
+      name: "사아자",
+      rank: 3,
+      amount: 80,
+      url: "../../../../src/assets/img/example-profile.jpg",
+    },
+  ];
+
+  const TEST_DATA_REST3 = [
+    {
+      name: "차카타",
+      rank: 4,
+      amount: 70,
+      url: "../../../../src/assets/img/example-profile.jpg",
+    },
+    {
+      name: "파하거",
+      rank: 5,
+      amount: 60,
+      url: "../../../../src/assets/img/example-profile.jpg",
+    },
+    {
+      name: "너더러",
+      rank: 6,
+      amount: 50,
+      url: "../../../../src/assets/img/example-profile.jpg",
+    },
+    {
+      name: "머버서서",
+      rank: 7,
+      amount: 40,
+      url: "../../../../src/assets/img/example-profile.jpg",
+    },
+  ];
+
+  const TopThreeComponent = TEST_DATA_TOP3.map((data, index) => (
+    <TopThree
+      key={index + 1}
+      name={data.name}
+      rank={data.rank}
+      amount={data.amount}
+      url={data.url}
+    />
+  ));
+
+  const RestComponent = TEST_DATA_REST3.map((data, index) => (
+    <RestRanking
+      key={index + 4}
+      name={data.name}
+      rank={data.rank}
+      amount={data.amount}
+      url={data.url}
+    />
+  ));
   return (
     <div className="mx-auto w-inner pt-30">
       <div className="h-full w-full rounded-20 bg-white p-20">
@@ -10,93 +79,9 @@ export default function DrinkingRanking() {
         />
         <div>
           <div className="mb-10 grid grid-cols-3 items-end gap-14">
-            <div className="relative flex h-140 w-full items-center justify-center rounded-10 bg-green">
-              <div className="absolute top-10 left-5 h-24 w-24">
-                <img
-                  className="w-24 object-contain"
-                  src="../../src/assets/img/icon/second-prize.png"
-                  alt="1등"
-                />
-              </div>
-              <div className="content">
-                <div className="mb-15 h-45 w-45 rounded-full bg-white">
-                  {/* <img src="" alt="" /> */}
-                </div>
-                <div className="text-1 font-mediumtext-1 text-center font-medium text-white">
-                  <h3 className="mb-10">이름</h3>
-                  <p>00잔</p>
-                </div>
-              </div>
-            </div>
-            <div className="relative flex h-150 w-full items-center justify-center rounded-10 bg-green">
-              <div className="absolute top-10 left-5 h-24 w-24">
-                <img
-                  className="w-24 object-contain"
-                  src="../../src/assets/img/icon/first-prize.png"
-                  alt="1등"
-                />
-              </div>
-              <div className="content">
-                <div className="mb-15 h-45 w-45 rounded-full bg-white">
-                  {/* <img src="" alt="" /> */}
-                </div>
-                <div className="text-1 font-mediumtext-1 text-center font-medium text-white">
-                  <h3 className="mb-10">이름</h3>
-                  <p>00잔</p>
-                </div>
-              </div>
-            </div>
-            <div className="relative flex h-140 w-full items-center justify-center rounded-10 bg-green">
-              <div className="absolute top-10 left-5 h-24 w-24">
-                <img
-                  className="w-24 object-contain"
-                  src="../../src/assets/img/icon/third-prize.png"
-                  alt="1등"
-                />
-              </div>
-              <div className="content">
-                <div className="mb-15 h-45 w-45 rounded-full bg-white">
-                  {/* <img src="" alt="" /> */}
-                </div>
-                <div className="text-1 font-mediumtext-1 text-center font-medium text-white">
-                  <h3 className="mb-10">이름</h3>
-                  <p>00잔</p>
-                </div>
-              </div>
-            </div>
+            {TopThreeComponent}
           </div>
-          <div className="flex flex-col gap-10">
-            <div className="borer-green30 flex h-60 w-full items-center justify-between border-b-1 border-b-green30 px-20">
-              <div className="flex items-center gap-15">
-                <h4 className="w-30 text-22 font-medium">4</h4>
-                <div className="h-35 w-35 rounded-full bg-indigo-100">
-                  {/* <img src="" alt="프로필" /> */}
-                </div>
-                <h5 className="text-1 font-medium">이름</h5>
-              </div>
-              <p className="text-1 font-medium">00잔</p>
-            </div>
-            <div className="borer-green30 flex h-60 w-full items-center justify-between border-b-1 border-b-green30 px-20">
-              <div className="flex items-center gap-15">
-                <h4 className="w-30 text-22 font-medium">5</h4>
-                <div className="h-35 w-35 rounded-full bg-indigo-100">
-                  {/* <img src="" alt="프로필" /> */}
-                </div>
-                <h5 className="text-1 font-medium">이름</h5>
-              </div>
-              <p className="text-1 font-medium">00잔</p>
-            </div>
-            <div className="borer-green30 flex h-60 w-full items-center justify-between px-20">
-              <div className="flex items-center gap-15">
-                <h4 className="w-30 text-22 font-medium">6</h4>
-                <div className="h-35 w-35 rounded-full bg-indigo-100">
-                  {/* <img src="" alt="프로필" /> */}
-                </div>
-                <h5 className="text-1 font-medium">이름</h5>
-              </div>
-              <p className="text-1 font-medium">00잔</p>
-            </div>
-          </div>
+          <div className="flex flex-col gap-10">{RestComponent}</div>
         </div>
       </div>
     </div>
