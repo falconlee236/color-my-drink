@@ -1,10 +1,17 @@
 import ContentTitle from "../ContentTitle";
 
-export default function VoteRanking() {
+interface VoteRankingProps {
+  title: string;
+  subject: string;
+}
+
+export default function VoteRanking(props: VoteRankingProps) {
   return (
-    <div className="mx-auto w-inner pt-30">
+    <div
+      className={`mx-auto w-inner pt-40 ${props.subject == "인기" ? "pb-100" : ""}`}
+    >
       <div className="h-full w-full rounded-20 bg-white p-20">
-        <ContentTitle title={"👍 최고의 한 잔"} subTitle={"25.03.05 기준"} />
+        <ContentTitle title={props.title} subTitle={"25.03.05 기준"} />
         <div className="flex flex-col gap-10">
           <div className="flex h-120 w-full items-center justify-between rounded-20 bg-green p-20 text-white">
             <div className="flex items-center gap-15">

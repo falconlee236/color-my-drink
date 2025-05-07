@@ -20,7 +20,7 @@ export default function JuiceSlide(props: JuiceSlideProps) {
       {SLIDE_MAP.map((page, index) => (
         <SwiperSlide key={`${slideNum}-${index}`}>
           <div className="mb-18 flex justify-center gap-18">
-            <JuiceItem num={`${page}.0`} />
+            <JuiceItem num={`${page}.${index}`} />
             <JuiceItem num={`${page}.1`} />
             <JuiceItem num={`${page}.2`} />
           </div>

@@ -13,6 +13,13 @@
 @import "tailwindcss/utilities.css" layer(utilities);
 
 @layer base {
+  body,
+  html {
+    height: 100%;
+  }
+  #root {
+    min-height: 100vh;
+  }
   body {
     font-family: "pretendard";
     line-height: 1;
@@ -23,7 +30,7 @@
   }
 
   button {
-    cursor: pointer
+    cursor: pointer;
   }
 
   .wrap {
@@ -64,6 +71,7 @@
   --color-green: #2e4a3d;
   --color-green10: rgba(46, 74, 61, 0.1);
   --color-green30: rgba(46, 74, 61, 0.3);
+  --color-green50: rgba(46, 74, 61, 0.5);
   --color-button: #212121;
   --color-btn80: rgba(33, 33, 33, 0.8);
   --color-333: #333333;
@@ -72,6 +80,7 @@
   --color-888: #888888;
   --color-ccc: #cccccc;
   --color-ccc25: rgba(204, 204, 204, 0.25);
+  --color-ccc50: rgba(204, 204, 204, 0.5);
   --color-ccc80: rgba(204, 204, 204, 0.8);
   --color-ddd: #dddddd;
   --color-communityBg: #f8f8f8;
@@ -85,8 +94,10 @@
   --spacing-15: 15px;
   --spacing-18: 18px;
   --spacing-20: 20px;
+  --spacing-22: 22px;
   --spacing-24: 24px;
   --spacing-25: 25px;
+  --spacing-28: 28px;
   --spacing-30: 30px;
   --spacing-35: 35px;
   --spacing-40: 40px;
@@ -96,6 +107,7 @@
   --spacing-60: 60px;
   --spacing-70: 70px;
   --spacing-80: 80px;
+  --spacing-85: 85px;
   --spacing-100: 100px;
   --spacing-120: 120px;
   --spacing-130: 130px;

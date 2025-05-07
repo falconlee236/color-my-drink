@@ -2,7 +2,7 @@ import ContentTitle from "../ContentTitle";
 
 export default function IngredientRanking() {
   return (
-    <div className="mx-auto w-inner pt-30">
+    <div className="mx-auto w-inner pt-40">
       <div className="h-full w-full rounded-20 bg-white p-20">
         <ContentTitle
           title={"🍹 가장 인기 많은 재료는!"}

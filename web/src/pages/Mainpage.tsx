@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 export default function Mainpage() {
   const currentClickModal = useAppSelector(valueClickModal);
   const navigate = useNavigate();
-  const goToCommunity = () => navigate("/community");
+  const goToCommunityRanking = () => navigate("/community/ranking");
 
   return (
     <div className="wrap relative flex h-full flex-col bg-white">
@@ -35,7 +35,7 @@ export default function Mainpage() {
           <div className="flex gap-10">
             <button
               className="h-55 w-1/2 rounded-20 border border-solid border-button bg-white font-medium"
-              onClick={goToCommunity}
+              onClick={goToCommunityRanking}
             >
               커뮤니티
             </button>
