@@ -7,6 +7,9 @@ import ingredientReducer from "./features/orders/ingredientSlice";
 import nameReducer from "./features/orders/nameSlice";
 import letterSenderReducer from "./features/orders/letterSenderSlice";
 import letterContentReducer from "./features/orders/letterContentSlice";
+import clickModalReducer from "./features/main-sharedPage/clickModalSlice";
+import navigationReducer from "./features/communityPage/clickNavigation";
+import votingReducer from "./features/communityPage/voting";
 
 export const store = configureStore({
   reducer: {
@@ -18,6 +21,9 @@ export const store = configureStore({
     name: nameReducer,
     letterSender: letterSenderReducer,
     letterContent: letterContentReducer,
+    clickModal: clickModalReducer,
+    navigation: navigationReducer,
+    voting: votingReducer,
   },
 });
 

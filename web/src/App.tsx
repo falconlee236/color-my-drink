@@ -7,6 +7,14 @@ import OrderSizeIngredientAccess from "./pages/OrderSizeIngredientAccess.tsx";
 import OrderNameMessage from "./pages/OrderNameMessage.tsx";
 import Loading from "./pages/Loading.tsx";
 import Result from "./pages/Result.tsx";
+import CommunityRanking from "./pages/CommunityRanking.tsx";
+import CommunityShowCase from "./pages/CommunityShowCase.tsx";
+import CommunityNotice from "./pages/CommunityNotice.tsx";
+import CommunityMyAccount from "./pages/CommunityMyAccount.tsx";
+import ChangeName from "./pages/ChangeName.tsx";
+import ChangeEmail from "./pages/ChangeEmail.tsx";
+import ChangeAccount from "./pages/ChangeAccount.tsx";
+import ResignNotice from "./pages/ResignNotice.tsx";
 
 export default function App() {
   return (
@@ -23,6 +31,20 @@ export default function App() {
         <Route path="/OrderNameMessage" element={<OrderNameMessage />} />
         <Route path="/loading" element={<Loading />} />
         <Route path="/result" element={<Result />} />
+        <Route path="/community/ranking" element={<CommunityRanking />} />
+        <Route path="/community/showcase" element={<CommunityShowCase />} />
+        <Route path="/community/notice" element={<CommunityNotice />} />
+        <Route path="/community/myaccount" element={<CommunityMyAccount />} />
+        <Route path="/community/myaccount/name" element={<ChangeName />} />
+        <Route path="/community/myaccount/email" element={<ChangeEmail />} />
+        <Route
+          path="/community/myaccount/account"
+          element={<ChangeAccount />}
+        />
+        <Route
+          path="/community/myaccount/account/resignNotice"
+          element={<ResignNotice />}
+        />
       </Routes>
     </BrowserRouter>
   );
