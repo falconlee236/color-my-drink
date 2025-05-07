@@ -1,12 +1,6 @@
-interface TopThreeProps {
-  key: number;
-  name: string;
-  rank: number;
-  amount: number;
-  url: string;
-}
+import { BaseProps } from "./BaseProps";
 
-export default function TopThree(props: TopThreeProps) {
+export default function TopThree(props: BaseProps) {
   return (
     <div className="relative flex h-140 w-full items-center justify-center rounded-10 bg-green">
       <div className="absolute top-10 left-5 h-24 w-24">

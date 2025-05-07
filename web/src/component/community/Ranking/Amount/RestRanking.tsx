@@ -1,12 +1,6 @@
-interface RestRankingProps {
-  key: number;
-  name: string;
-  rank: number;
-  amount: number;
-  url: string;
-}
+import { BaseProps } from "./BaseProps";
 
-export default function Rest(props: RestRankingProps) {
+export default function RestRanking(props: BaseProps) {
   return (
     <div className="borer-green30 flex h-60 w-full items-center justify-between border-b-1 border-b-green30 px-20">
       <div className="flex items-center gap-15">
